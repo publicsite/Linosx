@@ -1,0 +1,19 @@
+build ppc toolchain
+cross compile linux kernel
+cross compile binutils, install into ${SYSROOT}/tmpPorts
+cross compile libc, install into ${SYSROOT}/usr/...
+cross compile macports, install into ${SYSROOT}/tmpPorts
+modify macports.conf to install into /usr/...
+	see https://guide.macports.org/chunked/internals.configuration-files.html
+install qemu ppc static
+copy qemu ppc static
+install binutils, macports, coreutils, bash using macports (in usr)
+delete ${SYSROOT}/tmpPorts
+make a script to install rest of programs, run in the chroot
+compile connman-gtk, install to chroot
+
+__________________________________________________
+
+note, you will need the firmware/drivers ...
+
+https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/

@@ -1,0 +1,31 @@
+cmake	yes
+clang	brew install --with-toolchain llvm
+bison	yes
+flex		yes
+xz-utils	no (though xz package exists)
+libfuse	yes
+libudev	no
+glibc	yes
+libcap	yes
+git		yes
+git-lfs	yes
+python2	https://stackoverflow.com/questions/60298514/how-to-reinstall-python2-from-homebrew
+mesa-glu	yes
+cairo2	cairo	?
+mesalib-glw	yes
+libtiff	yes
+libfreetype	no
+libxml2	yes
+fontconfig	yes
+libbsd	yes
+libxrandr	yes
+libxcursor	yes
+libgif	no
+pulseaudio	yes
+libavformat	no
+libavcodec	no
+libswresample	no
+dbus		yes
+libxkbfile		yes
+openssl@3	yes
+

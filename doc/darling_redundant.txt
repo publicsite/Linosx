@@ -1,0 +1,6 @@
+cache
+https://github.com/darlinghq/darling-commoncrypto.git
+darling-compiler-rt.git
+darling-corecrypto.git
+darling-libdispatch.git
+darling-dyld.git

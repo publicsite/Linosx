@@ -1,0 +1,143 @@
+use x86_64 image and install
+	gcc-powerpc-linux-gnu
+	qemu-system-ppc
+compile yaboot
+cp -f "<path to ofboot.b>" "mountpoint/ofboot.b"
+cp -f "<path to yaboot>" "mountpoint/yaboot"
+cp -f "<path to yaboot.conf>" "mountpoint/yaboot.conf"
+cp -f "<path to ofwboot>" "mountpoint/ofwboot"
+chmod a-w "$TARGET/yaboot"
+chmod a-w "$TARGET/yaboot.conf"
+chmod a-w "$TARGET/ofboot.b"
+chmod a-w "$TARGET/ofwboot"
+
+yaboot.conf...:
+
+boot=/dev/sr0 init-message=Welcome to LinoSX! Hit <TAB> for boot options
+partition=1 timeout=30 install=/usr/lib/yaboot/yaboot delay=10 nonvram
+image=/vmlinuz
+	 label=linux
+	 read-only
+	 initrd=/initramfs.img
+	 append="root=LABEL=/"
+
+install to hdd ...:
+fdisk partition code: af
+create filesystem with: mkfs.hfs
+
+software to install...:
+
+
+apt-get -m -y install \
+systemd-sysv \
+live-config \
+task-laptop \
+task-english \
+alsa-utils \
+xdg-utils \
+xorg \
+xserver-xorg-input-all \
+xserver-xorg-video-all \
+va-driver-all \
+pulseaudio \
+xfce4-panel \
+xfce4-pulseaudio-plugin \
+xfce4-terminal \
+xfce4-whiskermenu-plugin \
+xfwm4 \
+thunar \
+xdm \
+qalculate-gtk \
+pavucontrol \
+firmware-linux-free \
+htop \
+epiphany \
+gnome-software \
+gnome-package-updater \
+console-setup-mini
+
+apt-get -m -y install --no-install-recommends \
+"$2" \
+xfdesktop4 \
+xfdesktop4-data \
+connman \
+connman-ui \
+connman-gtk \
+xfce4-power-manager \
+xfce4-power-manager-plugins \
+bc \
+wget \
+nano \
+vim \
+file \
+iputils-ping \
+fonts-crosextra-caladea \
+fonts-crosextra-carlito \
+fonts-liberation2 \
+fonts-linuxlibertine \
+fonts-noto-core \
+fonts-noto-extra \
+fonts-noto-ui-core \
+fonts-sil-gentium-basic \
+locales \
+whois \
+telnet \
+aptitude \
+lsof \
+time \
+tnftp \
+xserver-xorg-input-synaptics \
+sudo \
+fdisk \
+less \
+dns323-firmware-tools \
+firmware-linux-free \
+grub-firmware-qemu \
+hdmi2usb-fx2-firmware \
+sigrok-firmware-fx2lafw \
+amd64-microcode \
+bluez-firmware \
+dahdi-firmware-nonfree \
+firmware-amd-graphics \
+firmware-atheros \
+firmware-bnx2 \
+firmware-bnx2x \
+firmware-brcm80211 \
+firmware-cavium \
+firmware-intel-sound \
+firmware-intelwimax \
+firmware-iwlwifi \
+firmware-libertas \
+firmware-linux \
+firmware-linux-nonfree \
+firmware-misc-nonfree \
+firmware-myricom \
+firmware-netronome \
+firmware-netxen \
+firmware-qcom-media \
+firmware-qlogic \
+firmware-realtek \
+firmware-samsung \
+firmware-siano \
+firmware-ti-connectivity \
+firmware-zd1211 \
+intel-microcode \
+midisport-firmware \
+greybird-gtk-theme \
+breeze-icon-theme \
+fonts-crosextra-caladea \
+fonts-crosextra-carlito \
+fonts-liberation2 \
+fonts-linuxlibertine \
+fonts-noto-core \
+fonts-noto-extra \
+fonts-noto-ui-core \
+fonts-sil-gentium-basic
+
+
+
+
+___Omitted_______________
+
+https://ports.macports.org/port/Etoile/
+	unstable
