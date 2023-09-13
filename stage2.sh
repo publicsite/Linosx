@@ -49,6 +49,9 @@ apt-get -m -y install qemu-system-ppc qemu-user-static
 #for building linux
 apt-get -m -y install flex bison libssl3 libssl-dev
 
+#to restore permissions
+apt-get -m -y install acl
+
 ###for dooble
 ##apt-get -m -y install make g++ qt5-qmake qtbase5-dev libqt5charts5 libqt5charts5-dev libqt5qml5 libqt5webenginewidgets5 qtwebengine5-dev libqt5webengine5 qtwebengine5-dev-tools
 ###for tianocore
