@@ -27,4 +27,9 @@ mount --bind sys /overlay/mountpoint/sys
 #pivot_root /overlay/mountpoint /
 #exec chroot /overlay/mountpoint /sbin/init
 
+#fix "The permission of the setuid helper is not correct"
+if [ -f "/overlay/mountpoint/usr/lib/dbus-1.0/dbus-daemon-launch-helper" ]; then
+	chmod u+s "/overlay/mountpoint/usr/lib/dbus-1.0/dbus-daemon-launch-helper"
+fi
+
 exec chroot /overlay/mountpoint /sbin/init </dev/console >dev/console 2>&1
