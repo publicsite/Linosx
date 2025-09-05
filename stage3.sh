@@ -150,7 +150,8 @@ firmware-ti-connectivity \
 firmware-zd1211 \
 tzdata \
 greybird-gtk-theme \
-libext2fs2 libext2fs-dev
+libext2fs2 libext2fs-dev \
+ntpsec
 
 ##not needed because we use hfsutils for formatting instead
 ##wget http://ftp.ports.debian.org/debian-ports/pool-powerpc/main/h/hfsprogs/hfsprogs_540.1.linux3-5+ports_powerpc.deb
