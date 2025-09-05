@@ -118,8 +118,7 @@ less \
 xfce4-session \
 connman \
 connman-gtk \
-xfce4-power-manager \
-xfce4-power-manager-plugins \
+cbatticon \
 dns323-firmware-tools \
 firmware-linux-free \
 hdmi2usb-fx2-firmware \
