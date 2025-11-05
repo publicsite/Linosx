@@ -1,6 +1,9 @@
 #!/bin/sh
 #stage2 :- debootstraps a vanilla rootfs for the appropriate architecture
 
+OLD_UMASK="$(umask)"
+umask 0022
+
 #enter directory containing this script
 cd $(dirname $(realpath $0))
 
@@ -78,3 +81,5 @@ chown root:root "rootfs/etc/hosts"
 umount /proc
 umount /sys
 umount /dev/pts
+
+umask "${OLD_UMASK}"
