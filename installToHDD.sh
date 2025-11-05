@@ -1,5 +1,8 @@
 #!/bin/sh
 
+OLD_UMASK="$(umask)"
+umask 0022
+
 thefdisk="/sbin/mac-fdisk"
 thechroot="/usr/sbin/chroot"
 themkfsext2="/sbin/mkfs.ext2"
@@ -509,5 +512,7 @@ echo
 echo "*** Remove the installation medium and press return. ***"
 
 read nothing
+
+umask "${OLD_UMASK}"
 
 shutdown -r now
