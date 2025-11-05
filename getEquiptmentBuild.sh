@@ -1,5 +1,8 @@
 #!/bin/sh
 
+OLD_UMASK="$(umask)"
+umask 0022
+
 #myBuild options
 
 #environment variables
@@ -36,3 +39,5 @@ export PREFIX='/usr' #the location to install to
 
 #"${myBuildsDir}/yaboot/yaboot.myBuild" get
 "${myBuildsDir}/linux/linux.myBuild" get
+
+umask "${OLD_UMASK}"
