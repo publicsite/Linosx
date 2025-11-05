@@ -1,6 +1,9 @@
 #!/bin/sh
 #stage1 :- downloads a iso and extracts the root filesystem, then runs the later stages.
 
+OLD_UMASK="$(umask)"
+umask 0022
+
 if [ "$1" = "" ]; then
 	echo "Argv1: <arch>"
 	echo "eg. \"i386\""
@@ -185,3 +188,5 @@ sudo chroot "${thepwd}/mountpoint/workdir/rootfs" /qemu-ppc-static /usr/bin/grub
 sudo mv "${thepwd}/mountpoint/workdir/rootfs/linosx-powerpc.iso" "${thepwd}/"
 
 sudo rm -rf "${thepwd}/mountpoint/workdir/rootfs/topack"
+
+umask "${OLD_UMASK}"
