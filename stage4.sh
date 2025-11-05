@@ -1,6 +1,9 @@
 #!/bin/sh
 #stage4.sh :- start of bootable cd code
 
+OLD_UMASK="$(umask)"
+umask 0022
+
 #we mount the stuff for apt
 mount none -t proc /proc
 mount none -t sysfs /sys
@@ -94,3 +97,5 @@ xorriso -as mkisofs \
 umount /proc
 umount /sys
 umount /dev/pts
+
+umask "${OLD_UMASK}"
