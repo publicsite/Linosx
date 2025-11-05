@@ -1,5 +1,8 @@
 #!/bin/sh
 
+OLD_UMASK="$(umask)"
+umask 0022
+
 #run
 #sudo mount --bind /dev mountpoint/dev
 #before running this script in a chroot
@@ -205,3 +208,5 @@ chown ${2}:${2} "${myBuildHome}/image.img"
 
 #qemu-system-x86_64 -kernel installDir/boot/vmlinuz-linux-deblob -m 256 -drive format=raw,file=image.img,media=disk -append 'root=/dev/sda rootfstype=ext2 rw rootwait' -vga cirrus
 #xinit /etc/X11/xinit/site.xinitrc -- /usr/bin/X -br
+
+umask "${OLD_UMASK}"
