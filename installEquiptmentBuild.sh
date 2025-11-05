@@ -1,4 +1,8 @@
 #!/bin/sh
+
+OLD_UMASK="$(umask)"
+umask 0022
+
 #myBuild options
 
 #environment variables
@@ -58,3 +62,5 @@ cd "${myBuildHome}"
 "${myBuildsDir}/linux/linux.myBuild" extract
 "${myBuildsDir}/linux/linux.myBuild" build kernel
 "${myBuildsDir}/linux/linux.myBuild" install kernel
+
+umask "${OLD_UMASK}"
