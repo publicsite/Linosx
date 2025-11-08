@@ -234,6 +234,9 @@ cd /
 
 ln -s boot/initrd.img-linux initrd.img
 
+sudo chmod 750 /etc/sudoers.d
+sudo chmod 0440 /etc/sudoers
+
 rm /root/.bash_history
 
 #unmount stuff
