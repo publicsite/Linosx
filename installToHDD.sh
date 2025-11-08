@@ -495,6 +495,9 @@ else
 printf "You do not have enough space to create a swap, so not bothering to ask\n"
 fi
 
+#make it so files in home are only modified, read, executed by user.
+find tempmount/home/* -exec chmod go-wrx {} \;
+
 umount tempmount
 
 #(
