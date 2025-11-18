@@ -206,7 +206,7 @@ while true; do
 	else
 		if [ "$(check_for_layout "${1}" "${option8}" "! layout")" = "found" ]; then
 			printf "Setting layout to %s.\n\n" "${option8}"
-			sed -i 's/XKBLAYOUT=\"\w*"/XKBLAYOUT=\"'${option8}'\"/g' "${1}/etc/default/keyboard"
+			sed -i "s/XKBLAYOUT=".*"$/XKBLAYOUT=\"${option8}\"/g" "${1}/etc/default/keyboard"
 			keymaps=""
 			while true; do
 					printf "*** Please wait while I print your variants for %s ***\n" "${option8}"
@@ -224,7 +224,7 @@ while true; do
 					break
 				elif [ "$(check_for_layout "${1}" "${option9}" "! variant")" = "found" ]; then
 					printf "Setting variant to %s.\n\n" "${option9}"
-					sed -i 's/XKBVARIANT=\"\w*"/XKBVARIANT=\"'${option9}'\"/g' "${1}/etc/default/keyboard"
+					sed -i "s/XKBVARIANT=".*"$/XKBVARIANT=\"${option9}\"/g" "${1}/etc/default/keyboard"
 					break
 				fi
 			done
