@@ -53,7 +53,9 @@ sudo mkdir -p "${thepwd}/mountpoint/workdir/rootfs/etc/skel/Desktop"
 sudo mkdir -p "${thepwd}/mountpoint/workdir/rootfs/etc/skel/.config"
 sudo cp -a "${thepwd}/xfce4" "${thepwd}/mountpoint/workdir/rootfs/etc/skel/.config/"
 sudo cp -a "${thepwd}/.xinitrc" "${thepwd}/mountpoint/workdir/rootfs/etc/skel/"
+sudo cp -a "${thepwd}/.profile" "${thepwd}/mountpoint/workdir/rootfs/etc/skel/"
 sudo chmod 700 "${thepwd}/mountpoint/workdir/rootfs/etc/skel/.xinitrc"
+sudo chmod 700 "${thepwd}/mountpoint/workdir/rootfs/etc/skel/.profile"
 sudo ln -s .xinitrc "${thepwd}/mountpoint/workdir/rootfs/etc/skel/.xsession"
 sudo chmod 700 "${thepwd}/mountpoint/workdir/rootfs/etc/skel/.xsession" "${thepwd}/mountpoint/workdir/rootfs/etc/skel/.xinitrc"
 sudo mkdir -p "${thepwd}/mountpoint/workdir/rootfs/etc/skel/.config/gtk-3.0"
@@ -73,6 +75,10 @@ sudo cp -a ${thepwd}/xfce4 "${thepwd}/mountpoint/workdir/rootfs/root/.config/"
 #installer xinitrc
 sudo cp -a ${thepwd}/installer.xinitrc "${thepwd}/mountpoint/workdir/rootfs/root/.xinitrc"
 sudo chmod 700 "${thepwd}/mountpoint/workdir/rootfs/root/.xinitrc"
+
+#copy .profile
+sudo cp -a ${thepwd}/.profile "${thepwd}/mountpoint/workdir/rootfs/root/"
+sudo chmod 700 "${thepwd}/mountpoint/workdir/rootfs/root/.profile"
 
 sudo ln -s .xinitrc "${thepwd}/mountpoint/workdir/rootfs/root/.xsession"
 sudo chmod 700 "${thepwd}/mountpoint/workdir/rootfs/root/.xsession" "${thepwd}/mountpoint/workdir/rootfs/root/.xinitrc"
