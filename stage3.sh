@@ -50,7 +50,9 @@ task-laptop \
 task-english \
 alsa-utils \
 init \
-systemd-sysv \
+systemd \
+systemd-resolvd \
+default-logind \
 live-config \
 console-setup-mini \
 xdg-utils \
@@ -72,7 +74,7 @@ xfce-polkit \
 xfce4-power-manager xfce4-power-manager-data xfce4-power-manager-plugins \
 thunar \
 thunar-archive-plugin \
-lightdm \
+xdm \
 blueman \
 qalculate-gtk \
 xfburn \
@@ -144,7 +146,6 @@ firmware-misc-nonfree \
 firmware-myricom \
 firmware-netronome \
 firmware-netxen \
-firmware-qcom-media \
 firmware-qlogic \
 firmware-realtek \
 firmware-samsung \
